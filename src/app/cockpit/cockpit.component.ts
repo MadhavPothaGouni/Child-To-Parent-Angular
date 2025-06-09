@@ -2,14 +2,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
-  templateUrl: './cockpit.component.html',
+  templateUrl: './cockpit.component.html', 
   styleUrl: './cockpit.component.css'
 })
 export class CockpitComponent {
   @Output() onAddappcockpit = new EventEmitter<{serverName: string, serverContent: string}>
   @Output() blurprintadded = new EventEmitter<{serverName: string, serverContent: string}>
   newServerName = '';
-  newServerContent = ''
+  newServerContent = '';
 
   onAddServer() {
     this.onAddappcockpit.emit({serverName: this.newServerName, serverContent: this.newServerContent})
