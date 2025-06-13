@@ -10,9 +10,9 @@
       <br>
       <button
         class="btn btn-primary"
-        (click)="onAddServer()">Add Server</button>
+        (click)="onAddServer()" [disabled]="!newServerName">Add Server</button>
       <button
         class="btn btn-primary"
-        (click)="onAddBlueprint()">Add Server Blueprint</button>
+        (click)="onAddBlueprint()" [disabled]="!newServerContent">Add Server Blueprint</button>
     </div>
   </div> 

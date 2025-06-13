@@ -1,26 +1,33 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   serverElements = [];
-
-  onAddCockpit(serverData: {serverName: string, serverContent: string}){
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    })
+  message = '';
+  onAddCockpit(serverData: { serverName: string; serverContent: string }) {
+    if (!serverData.serverName && !serverData.serverContent) {
+      this.message = 'Please Enter Valid Details'
+    } else {
+      this.serverElements.push({
+        type: 'server',
+        name: serverData.serverName,
+        content: serverData.serverContent,
+      });
+    }
   }
-  onBlueprintadded(serverData: {serverName: string, serverContent: string}){
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    })
+  onBlueprintadded(serverData: { serverName: string; serverContent: string }) {
+    if (!serverData.serverName && !serverData.serverContent) {
+      this.message = 'Please Enter Valid Details'
+    } else {
+      this.serverElements.push({
+        type: 'server',
+        name: serverData.serverName,
+        content: serverData.serverContent,
+      });
+    }
   }
 }
-
